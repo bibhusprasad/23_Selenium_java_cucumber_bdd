@@ -19,4 +19,4 @@ Gherkin is a language that Cucumber understands. It is a business readable, doma
 * **And :** Provides a logical AND condition between statements.
 * **Then :** Used to describe an expected outcome.
 
-![alt text](https://github.com/bibhusprasad/23_Selenium_java_cucumber_bdd/tree/master/images/feature_file.png?raw=true)
+![plot](/images/feature_file.png?raw=true)
