@@ -72,4 +72,24 @@ public class Contact_Us_Steps {
         WebElement contactUsSubmissionMessage = webDriver.findElement(By.xpath("//div[@id='contact_reply']/h1"));
         Assertions.assertEquals("Thank You for your Message!", contactUsSubmissionMessage.getText());
     }
+
+    @When("I enter a specific first name {word}")
+    public void i_enter_a_specific_first_name_john(String firstName) {
+        webDriver.findElement(By.xpath("//input[@name='first_name']")).sendKeys(firstName);
+    }
+
+    @And("I enter a specific last {word}")
+    public void i_enter_a_specific_last_doe(String lastName) {
+        webDriver.findElement(By.xpath("//input[@name='last_name']")).sendKeys(lastName);
+    }
+
+    @And("I enter a specific email address {word}")
+    public void i_enter_a_specific_email_address_johndoegmailcom(String email) {
+        webDriver.findElement(By.xpath("//input[@name='email']")).sendKeys(email);
+    }
+
+    @And("I enter a specific comment {string}")
+    public void i_enter_a_specific_comment(String message) {
+        webDriver.findElement(By.xpath("//textarea[@name='message']")).sendKeys(message);
+    }
 }
