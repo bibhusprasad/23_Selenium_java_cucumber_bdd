@@ -23,7 +23,11 @@
 * [implementing step definition](https://github.com/bibhusprasad/23_Selenium_java_cucumber_bdd/commit/37d7b1959faa911b6d863fdbbe2ade68a2cf6ee5)
 
 ### Implementing Cucumber Expressions
-* [implementing cucumber expressions]()
+* [implementing cucumber expressions](https://github.com/bibhusprasad/23_Selenium_java_cucumber_bdd/commit/17ca4b5318785a6a2173bdf61122a769108d0d24)
+
+### Runner class Tags and Reporting
+* [runner class tags and reporting]()
+
 
 ## Notes
 
