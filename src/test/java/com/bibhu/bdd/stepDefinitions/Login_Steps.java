@@ -64,11 +64,6 @@ public class Login_Steps {
         Assertions.assertEquals("validation succeeded", alertText);
     }
 
-    @When("I enter invalid username")
-    public void i_enter_invalid_username() {
-        webDriver.findElement(By.id("text")).sendKeys(generateRandomString(10));
-    }
-
     @And("I enter invalid password")
     public void i_enter_invalid_password() {
         webDriver.findElement(By.id("password")).sendKeys(generateRandomString(10));
