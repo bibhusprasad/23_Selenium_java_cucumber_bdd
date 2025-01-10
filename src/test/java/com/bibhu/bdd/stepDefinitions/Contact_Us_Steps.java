@@ -6,8 +6,12 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import net.bytebuddy.utility.RandomString;
+import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.By;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 
@@ -29,33 +33,43 @@ public class Contact_Us_Steps {
         webDriver.quit();
     }
 
+    public String generateRandomString(int length) {
+        return RandomString.make(length);
+    }
+
     @Given("I access the WebDriver University contact us page")
     public void i_access_the_web_driver_university_contact_us_page() {
-        // Write code here that turns the phrase above into concrete actions
-        System.out.println("Test1");
+        webDriver.get("https://webdriveruniversity.com/Contact-Us/contactus.html");
     }
+
     @When("I enter a unique first name")
     public void i_enter_a_unique_first_name() {
-        System.out.println("Test2");
+        webDriver.findElement(By.xpath("//input[@name='first_name']")).sendKeys("AutoFN" + generateRandomString(5));
     }
+
     @And("I enter a unique last name")
     public void i_enter_a_unique_last_name() {
-        System.out.println("Test3");
+        webDriver.findElement(By.xpath("//input[@name='last_name']")).sendKeys("AutoLN" + generateRandomString(5));
     }
+
     @And("I enter a unique email address")
     public void i_enter_a_unique_email_address() {
-        System.out.println("Test4");
+        webDriver.findElement(By.xpath("//input[@name='email']")).sendKeys(generateRandomString(10) + "@gmail.com");
     }
+
     @And("I enter a unique comment")
     public void i_enter_a_unique_comment() {
-        System.out.println("Test5");
+        webDriver.findElement(By.xpath("//textarea[@name='message']")).sendKeys("a sample test message " + generateRandomString(30));
     }
+
     @And("I click on the submit button")
     public void i_click_on_the_submit_button() {
-        System.out.println("Test6");
+        webDriver.findElement(By.xpath("//input[@value='SUBMIT']")).click();
     }
+
     @Then("I should be presented with a successful contact us submission message")
     public void i_should_be_presented_with_a_successful_contact_us_submission_message() {
-        System.out.println("Test7");
+        WebElement contactUsSubmissionMessage = webDriver.findElement(By.xpath("//div[@id='contact_reply']/h1"));
+        Assertions.assertEquals("Thank You for your Message!", contactUsSubmissionMessage.getText());
     }
 }
