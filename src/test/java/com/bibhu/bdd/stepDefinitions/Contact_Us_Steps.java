@@ -32,7 +32,7 @@ public class Contact_Us_Steps {
 
     @And("I enter a unique last name")
     public void i_enter_a_unique_last_name() {
-        webDriver.findElement(By.xpath("//input[@name='last_name']")).sendKeys("AutoLN" + generateRandomString(5));
+        webDriver.findElement(By.xpath("//input[@name='last_name555']")).sendKeys("AutoLN" + generateRandomString(5));
     }
 
     @And("I enter a unique email address")

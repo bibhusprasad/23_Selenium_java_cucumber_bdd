@@ -41,7 +41,10 @@
 * [tags hooks and driver factory](https://github.com/bibhusprasad/23_Selenium_java_cucumber_bdd/commit/fbbdb5cb0d38f5ebf5c2eddb47316cc9d61b53f5)
 
 ### Cucumber Parallel Execution
-* [cucumber parallel execution]()
+* [cucumber parallel execution](https://github.com/bibhusprasad/23_Selenium_java_cucumber_bdd/commit/ce2b17b398d4c0bb5765dcacf3198016f0ed110e)
+
+### Advanced Reporting Attaching Images to HTML
+* [advanced reporting attaching images to html]()
 
 ## Notes
 
