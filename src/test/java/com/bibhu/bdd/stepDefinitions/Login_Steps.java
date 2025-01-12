@@ -1,7 +1,5 @@
 package com.bibhu.bdd.stepDefinitions;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -10,28 +8,13 @@ import net.bytebuddy.utility.RandomString;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
+
+import static com.bibhu.java.cucumber.bdd.driver.DriverFactory.getWebDriver;
 
 public class Login_Steps {
 
-    private WebDriver webDriver;
-
-    @Before
-    public void setup() {
-        System.setProperty("webdriver.edge.driver", System.getProperty("user.dir") + "/src/main/java/drivers/msedgedriver.exe");
-        EdgeOptions edgeOptions = new EdgeOptions();
-        edgeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-        webDriver = new EdgeDriver(edgeOptions);
-        webDriver.manage().window().maximize();
-    }
-
-    @After
-    public void teardown() {
-        webDriver.quit();
-    }
+    private WebDriver webDriver = getWebDriver();
 
     /*public String generateRandomString(int length) {
         return RandomString.make(length);
