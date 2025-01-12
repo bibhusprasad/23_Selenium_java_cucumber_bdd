@@ -32,7 +32,10 @@
 * [login page use case](https://github.com/bibhusprasad/23_Selenium_java_cucumber_bdd/commit/e67c7356eb56911660e3d278276d836e077d8a31)
 
 ### Use Case 2 - Background keyword
-* [background keyword]()
+* [background keyword](https://github.com/bibhusprasad/23_Selenium_java_cucumber_bdd/commit/997bfd1664ce614776d65f475e0bc2d0b5c012d2)
+
+### Use Case 2 - Expression and Parameter example
+* [expression and parameter example]()
 
 ## Notes
 
@@ -48,3 +51,9 @@ Gherkin is a language that Cucumber understands. It is a business readable, doma
 * **Then :** Used to describe an expected outcome.
 
 ![plot](/images/feature_file.png?raw=true)
+
+**Cucumber Expressions**
+* [Cucumber Expressions Link](https://github.com/cucumber/cucumber-expressions)
+
+![plot](/images/cucumber_expressions_parameter.png?raw=true)
+

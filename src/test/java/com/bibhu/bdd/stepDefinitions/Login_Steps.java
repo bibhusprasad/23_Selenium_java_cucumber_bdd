@@ -33,9 +33,9 @@ public class Login_Steps {
         webDriver.quit();
     }
 
-    public String generateRandomString(int length) {
+    /*public String generateRandomString(int length) {
         return RandomString.make(length);
-    }
+    }*/
 
     @Given("I access the WebDriver University login page")
     public void i_access_the_web_driver_university_login_page() {
@@ -43,12 +43,27 @@ public class Login_Steps {
     }
 
     @When("I enter valid username {word}")
-    public void i_enter_valid_username_webdriver(String username) {
+    public void i_enter_valid_username(String username) {
+        webDriver.findElement(By.id("text")).sendKeys(username);
+    }
+
+    @When("I enter a username {}")
+    public void i_enter_a_username(String username) {
         webDriver.findElement(By.id("text")).sendKeys(username);
     }
 
     @And("I enter valid password {word}")
-    public void i_enter_valid_password_webdriver123(String password) {
+    public void i_enter_valid_password(String password) {
+        webDriver.findElement(By.id("password")).sendKeys(password);
+    }
+
+    @And("I enter invalid password {word}")
+    public void i_enter_invalid_password(String password) {
+        webDriver.findElement(By.id("password")).sendKeys(password);
+    }
+
+    @And("I enter a password {}")
+    public void i_enter_a_password(String password) {
         webDriver.findElement(By.id("password")).sendKeys(password);
     }
 
@@ -64,15 +79,17 @@ public class Login_Steps {
         Assertions.assertEquals("validation succeeded", alertText);
     }
 
-    @And("I enter invalid password")
-    public void i_enter_invalid_password() {
-        webDriver.findElement(By.id("password")).sendKeys(generateRandomString(10));
-    }
-
     @Then("I should be presented with a validation failure alert message")
     public void i_should_be_presented_with_a_validation_failure_alert_message() {
         Alert alert = webDriver.switchTo().alert();
         String alertText = alert.getText();
         Assertions.assertEquals("validation failed", alertText);
+    }
+
+    @Then("I should be presented with the following login validation message {}")
+    public void i_should_be_presented_with_the_following_login_validation_message(String loginValidationMessage) {
+        Alert alert = webDriver.switchTo().alert();
+        String alertText = alert.getText();
+        Assertions.assertEquals(loginValidationMessage, alertText);
     }
 }
