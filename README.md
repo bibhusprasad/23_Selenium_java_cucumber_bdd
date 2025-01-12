@@ -38,7 +38,10 @@
 * [expression and parameter example](https://github.com/bibhusprasad/23_Selenium_java_cucumber_bdd/commit/0c6245fafa95266e0bc77a4ff8a988cc7f90c373)
 
 ### Tags, Hooks and Driver Factory 
-* [tags hooks and driver factory]()
+* [tags hooks and driver factory](https://github.com/bibhusprasad/23_Selenium_java_cucumber_bdd/commit/fbbdb5cb0d38f5ebf5c2eddb47316cc9d61b53f5)
+
+### Cucumber Parallel Execution
+* [cucumber parallel execution]()
 
 ## Notes
 
@@ -60,3 +63,6 @@ Gherkin is a language that Cucumber understands. It is a business readable, doma
 
 ![plot](/images/cucumber_expressions_parameter.png?raw=true)
 
+**Cucumber Parallel Execution**
+* [Parallel Execution Link](https://cucumber.io/docs/guides/parallel-execution/)
+* [Parallel Execution For Junit5 Link](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-junit-platform-engine)
