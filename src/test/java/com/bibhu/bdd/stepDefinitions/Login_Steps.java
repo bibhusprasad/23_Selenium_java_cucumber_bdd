@@ -1,58 +1,60 @@
 package com.bibhu.bdd.stepDefinitions;
 
+import com.bibhu.java.cucumber.bdd.pageobject.BasePageObject;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import net.bytebuddy.utility.RandomString;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static com.bibhu.java.cucumber.bdd.driver.DriverFactory.getWebDriver;
+public class Login_Steps extends BasePageObject {
 
-public class Login_Steps {
+    private static final String LOGIN_URL = "https://webdriveruniversity.com/Login-Portal/index.html";
 
     private WebDriver webDriver = getWebDriver();
 
-    /*public String generateRandomString(int length) {
-        return RandomString.make(length);
-    }*/
-
     @Given("I access the WebDriver University login page")
     public void i_access_the_web_driver_university_login_page() {
-        webDriver.get("https://webdriveruniversity.com/Login-Portal/index.html");
+        navigateToUrl(LOGIN_URL);
     }
 
     @When("I enter valid username {word}")
     public void i_enter_valid_username(String username) {
-        webDriver.findElement(By.id("text")).sendKeys(username);
+        //webDriver.findElement(By.id("text")).sendKeys(username);
+        sendKeys(By.id("text"), username);
     }
 
     @When("I enter a username {}")
     public void i_enter_a_username(String username) {
-        webDriver.findElement(By.id("text")).sendKeys(username);
+        //webDriver.findElement(By.id("text")).sendKeys(username);
+        sendKeys(By.id("text"), username);
     }
 
     @And("I enter valid password {word}")
     public void i_enter_valid_password(String password) {
-        webDriver.findElement(By.id("password")).sendKeys(password);
+        //webDriver.findElement(By.id("password")).sendKeys(password);
+        sendKeys(By.id("password"), password);
     }
 
     @And("I enter invalid password {word}")
     public void i_enter_invalid_password(String password) {
-        webDriver.findElement(By.id("password")).sendKeys(password);
+        //webDriver.findElement(By.id("password")).sendKeys(password);
+        sendKeys(By.id("password"), password);
     }
 
     @And("I enter a password {}")
     public void i_enter_a_password(String password) {
-        webDriver.findElement(By.id("password")).sendKeys(password);
+        //webDriver.findElement(By.id("password")).sendKeys(password);
+        sendKeys(By.id("password"), password);
     }
 
     @And("I click on login button")
     public void i_click_on_login_button() {
-        webDriver.findElement(By.id("login-button")).click();
+        //webDriver.findElement(By.id("login-button")).click();
+        waitForWebElementAndClick(By.id("login-button"));
     }
 
     @Then("I should be presented with a validation success alert message")

@@ -44,7 +44,10 @@
 * [cucumber parallel execution](https://github.com/bibhusprasad/23_Selenium_java_cucumber_bdd/commit/ce2b17b398d4c0bb5765dcacf3198016f0ed110e)
 
 ### Advanced Reporting Attaching Images to HTML
-* [advanced reporting attaching images to html]()
+* [advanced reporting attaching images to html](https://github.com/bibhusprasad/23_Selenium_java_cucumber_bdd/commit/5f6b0121e89fc5f2d36d9e4b9e7b8f8e5b0911c2)
+
+### Base page custom commands
+* [base page custom commands]()
 
 ## Notes
 
