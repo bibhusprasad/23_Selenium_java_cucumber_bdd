@@ -12,6 +12,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+import static com.bibhu.java.cucumber.bdd.util.GlobalVariableUtil.DEFAULT_EXPLICIT_TIMEOUT;
+
 public class BasePageObject {
 
     public BasePageObject() {
@@ -31,37 +33,37 @@ public class BasePageObject {
     }
 
     public void sendKeys(By by, String textToType) {
-        WebDriverWait webDriverWait = new WebDriverWait(getWebDriver(), Duration.ofSeconds(15));
+        WebDriverWait webDriverWait = new WebDriverWait(getWebDriver(), Duration.ofSeconds(DEFAULT_EXPLICIT_TIMEOUT));
         webDriverWait.until(ExpectedConditions.elementToBeClickable(by)).sendKeys(textToType);
     }
 
     public void sendKeys(WebElement webElement, String textToType) {
-        WebDriverWait webDriverWait = new WebDriverWait(getWebDriver(), Duration.ofSeconds(15));
+        WebDriverWait webDriverWait = new WebDriverWait(getWebDriver(), Duration.ofSeconds(DEFAULT_EXPLICIT_TIMEOUT));
         webDriverWait.until(ExpectedConditions.elementToBeClickable(webElement)).sendKeys(textToType);
     }
 
     public void waitForWebElementAndClick(By by) {
-        WebDriverWait webDriverWait = new WebDriverWait(getWebDriver(), Duration.ofSeconds(15));
+        WebDriverWait webDriverWait = new WebDriverWait(getWebDriver(), Duration.ofSeconds(DEFAULT_EXPLICIT_TIMEOUT));
         webDriverWait.until(ExpectedConditions.elementToBeClickable(by)).click();
     }
 
     public void waitForWebElementAndClick(WebElement webElement) {
-        WebDriverWait webDriverWait = new WebDriverWait(getWebDriver(), Duration.ofSeconds(15));
+        WebDriverWait webDriverWait = new WebDriverWait(getWebDriver(), Duration.ofSeconds(DEFAULT_EXPLICIT_TIMEOUT));
         webDriverWait.until(ExpectedConditions.elementToBeClickable(webElement)).click();
     }
 
     public void waitFor(By by) {
-        WebDriverWait webDriverWait = new WebDriverWait(getWebDriver(), Duration.ofSeconds(15));
+        WebDriverWait webDriverWait = new WebDriverWait(getWebDriver(), Duration.ofSeconds(DEFAULT_EXPLICIT_TIMEOUT));
         webDriverWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(by));
     }
 
     public void waitFor(WebElement webElement) {
-        WebDriverWait webDriverWait = new WebDriverWait(getWebDriver(), Duration.ofSeconds(15));
+        WebDriverWait webDriverWait = new WebDriverWait(getWebDriver(), Duration.ofSeconds(DEFAULT_EXPLICIT_TIMEOUT));
         webDriverWait.until(ExpectedConditions.visibilityOf(webElement));
     }
 
     public void waitForAlertAndValidateText(String message) {
-        WebDriverWait webDriverWait = new WebDriverWait(getWebDriver(), Duration.ofSeconds(20));
+        WebDriverWait webDriverWait = new WebDriverWait(getWebDriver(), Duration.ofSeconds(DEFAULT_EXPLICIT_TIMEOUT));
         webDriverWait.until(ExpectedConditions.alertIsPresent());
         String alertMessageText = getWebDriver().switchTo().alert().getText();
         Assertions.assertEquals(alertMessageText, message);

@@ -5,9 +5,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class ContactUsPageObject extends BasePageObject {
+import static com.bibhu.java.cucumber.bdd.util.GlobalVariableUtil.WEBDRIVER_UNIVERSITY_CONTACT_US_URL;
 
-    private static final String CONTACT_US_URL = "https://webdriveruniversity.com/Contact-Us/contactus.html";
+public class ContactUsPageObject extends BasePageObject {
 
     private @FindBy(xpath = "//input[@name='first_name']")
     WebElement firstNameTextField;
@@ -32,7 +32,7 @@ public class ContactUsPageObject extends BasePageObject {
     }
 
     public void navigateToWebDriverUniversityContactUsPage() {
-        navigateToUrl(CONTACT_US_URL);
+        navigateToUrl(WEBDRIVER_UNIVERSITY_CONTACT_US_URL);
     }
 
     public void setFirstName(String firstName) {

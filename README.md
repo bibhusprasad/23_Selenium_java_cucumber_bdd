@@ -50,7 +50,10 @@
 * [base page custom commands](https://github.com/bibhusprasad/23_Selenium_java_cucumber_bdd/commit/92ec72e66504aa90f2e56e9cb5f2524672cd9d56)
 
 ### Page Object Models
-* [page object models]()
+* [page object models](https://github.com/bibhusprasad/23_Selenium_java_cucumber_bdd/commit/b3bca64e7054c65f094ab801f1e47cc032fd350d)
+
+### Constant Variables
+* [constant variables]()
 
 ## Notes
 

@@ -3,9 +3,9 @@ package com.bibhu.java.cucumber.bdd.pageobject;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class LoginPageObject extends BasePageObject {
+import static com.bibhu.java.cucumber.bdd.util.GlobalVariableUtil.WEBDRIVER_UNIVERSITY_LOGIN_URL;
 
-    private static final String LOGIN_URL = "https://webdriveruniversity.com/Login-Portal/index.html";
+public class LoginPageObject extends BasePageObject {
 
     private @FindBy(id = "text")
     WebElement usernameTextField;
@@ -22,7 +22,7 @@ public class LoginPageObject extends BasePageObject {
     }
 
     public void navigateToWebDriverUniversityLoginPage() {
-        navigateToUrl(LOGIN_URL);
+        navigateToUrl(WEBDRIVER_UNIVERSITY_LOGIN_URL);
     }
 
     public void setUsername(String username) {
