@@ -47,7 +47,10 @@
 * [advanced reporting attaching images to html](https://github.com/bibhusprasad/23_Selenium_java_cucumber_bdd/commit/5f6b0121e89fc5f2d36d9e4b9e7b8f8e5b0911c2)
 
 ### Base page custom commands
-* [base page custom commands]()
+* [base page custom commands](https://github.com/bibhusprasad/23_Selenium_java_cucumber_bdd/commit/92ec72e66504aa90f2e56e9cb5f2524672cd9d56)
+
+### Page Object Models
+* [page object models]()
 
 ## Notes
 
@@ -72,3 +75,6 @@ Gherkin is a language that Cucumber understands. It is a business readable, doma
 **Cucumber Parallel Execution**
 * [Parallel Execution Link](https://cucumber.io/docs/guides/parallel-execution/)
 * [Parallel Execution For Junit5 Link](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-junit-platform-engine)
+
+**Page Object Models**
+* [Page Object Models](https://www.selenium.dev/documentation/test_practices/encouraged/page_object_models/)
