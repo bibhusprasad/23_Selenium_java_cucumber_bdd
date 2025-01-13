@@ -53,7 +53,10 @@
 * [page object models](https://github.com/bibhusprasad/23_Selenium_java_cucumber_bdd/commit/b3bca64e7054c65f094ab801f1e47cc032fd350d)
 
 ### Constant Variables
-* [constant variables]()
+* [constant variables](https://github.com/bibhusprasad/23_Selenium_java_cucumber_bdd/commit/6c977a34b4a5ad395470dea713f4374c4f080ad4)
+
+### Jenkins Configuration
+* [jenkins configuration]()
 
 ## Notes
 
@@ -81,3 +84,56 @@ Gherkin is a language that Cucumber understands. It is a business readable, doma
 
 **Page Object Models**
 * [Page Object Models](https://www.selenium.dev/documentation/test_practices/encouraged/page_object_models/)
+
+**Jenkins Integration**
+* [Download Jenkins War file](https://www.jenkins.io/download/)
+* [Supported java version](https://www.jenkins.io/doc/book/platform-information/support-policy-java/)
+
+### Start Jenkins through command prompt
+
+C:\dev>java -jar jenkins.war    (start in 8080 port)
+
+C:\dev>java -jar jenkins.war --httpPort=9090    (start in custom port)
+
+http://localhost:8080/login?from=%2F
+
+provide administrator password
+
+Install suggested package
+
+Provide necessary details
+
+### Configure Jenkins and Job creation and Job Configuration
+
+Manage Jenkins -> tools -> Add JDK and Maven
+
+Manage Jenkins -> plugin -> Install Maven Integration and Ansi color and cucumber reports
+
+New Item -> give Item name -> select maven project -> ok
+
+job/bdd-automation-framework/configure 
+    
+root pom -> D:\intellij_projects\selenium-java-cucumber-bdd\pom.xml
+
+goals and options -> clean compile test -Dcucumber.filter.tags="@regression"
+
+build environment -> color ANSI consol output -> xterm
+
+post build action -> cucumber reports -> advanced -> json report path -> D:\intellij_projects\selenium-java-cucumber-bdd\target\cucumber-report
+
+save
+
+click on build now
+
+
+### Target Specific tag in Jenkins
+
+goals and options -> clean compile test -Dcucumber.filter.tags="@${tag}"
+
+select this project is parameterised -> Add parameter -> choice parameter -> then put name as tag and choice as regression and contact-us and login
+
+### Target Specific thread count
+
+goals and options -> clean compile test -Dcucumber.filter.tags="@${tag}" -Ddataproviderthreadcount=${threadCount}
+
+select this project is parameterised -> Add parameter -> choice parameter -> then put name as threadCount and choice as 5 4 3 2 1
